@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using src.DataStructures.AbstractTypes;
 
-namespace src.DataStructures.Types
+namespace DataStructures.Types
 {
     public class StaticArrayQueue<T> : IQueue<T>
     {

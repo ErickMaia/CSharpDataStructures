@@ -220,5 +220,32 @@ namespace DataStructures.Types
 
         // TODO IsMinHeap() and override toString()
 
+        // Recursively checks if this heap is a min heap
+        // This method is just for testing purposes to make
+        // sure the heap invariant is still being maintained
+        // Called this method with k=0 to start at the root
+        public bool isMinHeap(int k) {
+            // If we are outside the bounds of the heap return true
+            int heapSize = size();
+            if (k >= heapSize) return true;
+
+            int left = 2 * k + 1;
+            int right = 2 * k + 2;
+
+            // Make sure that the current node k is less than
+            // both of its children left, and right if they exist
+            // return false otherwise to indicate an invalid heap
+            if (left < heapSize && !_lessOrEqualThan(k, left)) return false;
+            if (right < heapSize && !_lessOrEqualThan(k, right)) return false;
+
+            // Recurse on both children to make sure they're also valid heaps
+            return isMinHeap(left) && isMinHeap(right);
+        }
+
+        public override string ToString()
+        {
+            return _heap.ToString(); 
+        }
+
     }
 }

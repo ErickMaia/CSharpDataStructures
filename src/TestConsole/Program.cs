@@ -1,4 +1,4 @@
-﻿using src.DataStructures.Types;
+﻿using DataStructures.Types;
 
 StaticArrayQueue<string> names = new StaticArrayQueue<string>(); 
 
@@ -12,3 +12,4 @@ names.Enqueue("Kane");
 
 
 System.Console.WriteLine(names.Peek());
+
